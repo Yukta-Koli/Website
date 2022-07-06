@@ -1,0 +1,44 @@
+<br>
+
+{% extends 'base.html'%}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if form.errors %}
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        There was an error with your form..
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+{% endif %}
+
+
+
+<br><br>
+<h1 class="text-center py-2 mb-5" style="font-size: 65px;"> REGISTER </h1>
+<br>
+
+
+
+<body style="background-image: url('https://img.freepik.com/free-vector/abstract-background-template-science-technology-presentation-hexagonal-shape-with-blue-soft-color_151987-231.jpg?w=1800'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <form action="{% url 'register_user' %}" method=POST >
+        
+        {% csrf_token %}
+
+        <a style="color: #10707f; font-size: 18px; display: inline-block; margin-left: 10rem; float: center; break-before: column;">
+            {{form.as_p}}
+        </a>
+        <br><br>
+
+        <input type="submit" value="Register" class="btn text-center btn-info" style="font-size: 23px; box-shadow: 0 0 0.5rem rgba(212, 215, 223, 0.5); margin-left: 45%; margin-right: 55%;">
+
+    </form>
+
+</body>
+<br><br>
+
+{% endblock %}
