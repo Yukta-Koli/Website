@@ -3922,7 +3922,11 @@
       transition: none;
     }
   }
+
   
+  /* -------------------------------- Navbar ------------------------------ */
+  
+
   .nav {
     display: flex;
     flex-wrap: wrap;
