@@ -9921,7 +9921,6 @@
   position:relative;
   overflow:hidden;
   -webkit-transform:translate3d(0,0,0);
-  -webkit-backface-visibility:hidden;
   transition: 1.5s ease;
 }
 .owl-carousel .owl-item,.owl-carousel .owl-wrapper{

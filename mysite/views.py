@@ -89,4 +89,3 @@ def blog(request):
 
 def single(request):
     return render(request, 'single.html', {}) 
-

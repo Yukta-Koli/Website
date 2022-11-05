@@ -13,9 +13,6 @@ urlpatterns = [
     path('blog', views.blog, name='blog'),
     path('single', views.single, name='single'),
     path('booking', views.booking, name='booking'),
-   
-   
-
 
     # path('saveform', views.saveform, name='saveform')
 
