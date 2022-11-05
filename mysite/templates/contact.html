@@ -1,4 +1,3 @@
-
 {% load static %}
 
 <!DOCTYPE html>
@@ -44,9 +43,6 @@
         <script src="{% static 'website/mail' %}"></script>
 
     </head>
-
-
-
 
     <body>
         <!-- Topbar Start -->
@@ -104,13 +100,13 @@
                             <a href="{% url 'service' %}" class="nav-item nav-link">Service</a>
                             <a href="{% url 'project' %}" class="nav-item nav-link">Project</a>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Blog</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="{% url 'blog' %}" class="dropdown-item active">Blog Grid</a>
+                                    <a href="{% url 'blog' %}" class="dropdown-item">Blog Grid</a>
                                     <a href="{% url 'single' %}" class="dropdown-item">Blog Detail</a>
                                 </div>
                             </div>
-                            <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                            <a href="{% url 'contact' %}" class="nav-item nav-link active">Contact</a>
                             
                             {% if user.is_authenticated %}
                                 <a href="{% url 'logout' %}" class="nav-item nav-link">Logout</a>
@@ -171,13 +167,13 @@
             <div class="container py-4">
                 <div class="row align-items-center py-4">
                     <div class="col-md-6 text-center text-md-left">
-                        <h1 class="m-0 display-5 mb-4 mb-md-0 text-primary text-uppercase">Our Blog</h1>
+                        <h1 class="m-0 display-5 mb-4 mb-md-0 text-primary text-uppercase">Contact Us</h1>
                     </div>
                     <div class="col-md-6 text-center text-md-right">
                         <div class="d-inline-flex align-items-center">
                             <a class="btn btn-outline-primary" href="{% url 'index' %}">Home</a>
                             <i class="fas fa-angle-double-right text-primary mx-2"></i>
-                            <a class="btn btn-outline-primary disabled" href="">Our Blog</a>
+                            <a class="btn btn-outline-primary disabled" href="">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -186,143 +182,110 @@
         <!-- Page Header Start -->
 
 
-        <!-- Blog Start -->
-        <div class="container-fluid bg-light pt-5">
-            <div class="container py-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 col-md-8 col text-center mb-4">
-                        <h6 class="text-primary font-weight-normal text-uppercase mb-3">Our Blog</h6>
-                        <h1 class="mb-4">Read The Latest News & Articles From Our Blog</h1>
-                    </div>
-                </div>
-                <div class="row pb-3">
-                    <div class="col-md-4 mb-4">
-                        <div class="card border-0 mb-2">
-                            <img class="card-img-top" src="static/website/img/blog-1.jpg" alt="">
-                            <div class="card-body bg-white p-4">
-                                <div class="d-flex align-items-center mb-3">
-                                    <a class="btn btn-primary" href="{% url 'single' %}"><i class="fa fa-link"></i></a>
-                                    <h5 class="m-0 ml-3 text-truncate">Diam amet eos at no eos</h5>
+        <!-- Contact Start -->
+        <div class="container-fluid bg-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="d-flex flex-column justify-content-center bg-primary h-100 p-5">
+                            <img class="img-fluid" src="static/website/img/feature.jpg" alt="" style="margin-top: -8rem; border: 8px solid white; border-radius: 2rem;"><br>
+                            <div class="d-inline-flex border border-secondary p-4 mb-4">
+                                <h1 class="flaticon-office font-weight-normal text-secondary m-0 mr-3"></h1>
+                                <div class="d-flex flex-column">
+                                    <h4>Our Office</h4>
+                                    <p class="m-0 text-white">123 Street, Mumbai, Maharashtra</p>
                                 </div>
-                                <p>Diam amet eos at no eos sit, amet rebum ipsum clita stet, diam sea est diam eos, sit vero stet justo</p>
-                                <div class="d-flex">
-                                    <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                    <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                    <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
+                            </div>
+                            <div class="d-inline-flex border border-secondary p-4 mb-4">
+                                <h1 class="flaticon-email font-weight-normal text-secondary m-0 mr-3"></h1>
+                                <div class="d-flex flex-column">
+                                    <h4>Email Us</h4>
+                                    <p class="m-0 text-white">info@example.com</p>
+                                </div>
+                            </div>
+                            <div class="d-inline-flex border border-secondary p-4">
+                                <h1 class="flaticon-telephone font-weight-normal text-secondary m-0 mr-3"></h1>
+                                <div class="d-flex flex-column">
+                                    <h4>Call Us</h4>
+                                    <p class="m-0 text-white">+012 345 6789</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card border-0 mb-2">
-                            <img class="card-img-top" src="static/website/img/blog-2.jpg" alt="">
-                            <div class="card-body bg-white p-4">
-                                <div class="d-flex align-items-center mb-3">
-                                    <a class="btn btn-primary" href="{% url 'single' %}"><i class="fa fa-link"></i></a>
-                                    <h5 class="m-0 ml-3 text-truncate">Diam amet eos at no eos</h5>
+                    <div class="col-lg-7 mb-5 my-lg-5 py-5 pl-lg-5">
+                        <div class="contact-form">
+                            <div id="success"></div>
+
+                            <h1 class="mb-4 section-title" style="margin-top: -3rem;">Book an Appointment</h1><br> 
+
+                            <form action="{% url 'saveenquiry' %}" method=POST >
+    
+                                {% csrf_token %}
+                            
+                                <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label" style="color: #07494f; font-size: 18px; "><b>First Name</b></label>
+                                  <input type="text" class="form-control" name="fname"  placeholder="Enter Your First Name" aria-describedby="emailHelp" style="width: 600px;">
                                 </div>
-                                <p>Diam amet eos at no eos sit, amet rebum ipsum clita stet, diam sea est diam eos, sit vero stet justo</p>
-                                <div class="d-flex">
-                                    <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                    <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                    <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label" style="color: #07494f; font-size: 18px;"><b>Last Name</b></label>
+                                    <input type="text" class="form-control" name="lname" placeholder="Enter Your Last Name" style="width: 600px;">
                                 </div>
-                            </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label" style="color: #07494f; font-size: 18px;"><b>Email ID</b></label>
+                                    <input type="email" class="form-control" name="email" placeholder="Enter Your Email Address" style="width: 600px;">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label" style="color: #07494f; font-size: 18px;"><b>Phone Number</b></label>
+                                    <input type="phone" class="form-control" name="phone" placeholder="Enter Your Phone No." style="width: 600px;">
+                                </div>
+                                <div class="mb-3">
+                                  <label for="exampleInputPassword1" class="form-label" style="color: #07494f; font-size: 18px;"><b>Address</b></label>
+                                  <input type="text" class="form-control" name="address" placeholder="Enter Your Address" style="width: 600px;">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label" style="color: #07494f; font-size: 18px;"><b>Zip Code</b></label>
+                                    <input type="text" class="form-control" name="zip_code" placeholder="Enter Your Zip Code" style="width: 600px;">
+                                  </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label" style="color: #07494f; font-size: 18px;"><b>Message</b></label>
+                                    <textarea class="form-control p-4" rows="6" id="message" placeholder="Enter Your Message Here.." required="required" data-validation-required-message="Please enter your message"></textarea>
+                                    <p class="help-block text-danger"></p>
+                                  </div>
+                                <br>
+                                    
+                                <div>
+                                    <button class="btn text-center btn-primary py-3 px-5" type="submit" id="sendMessageButton" style="color: black; font-weight: 2rem; font-size: 22px;">Send Message</button>
+                                </div>
+
+                            </form>
+
+                            {% comment %} <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                                <div class="control-group">
+                                    <input type="text" class="form-control p-4" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group">
+                                    <input type="email" class="form-control p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group">
+                                    <input type="text" class="form-control p-4" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group">
+                                    <textarea class="form-control p-4" rows="6" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div>
+                                    <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Send Message</button>
+                                </div>
+                            </form> {% endcomment %}
                         </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card border-0 mb-2">
-                            <img class="card-img-top" src="static/website/img/blog-3.jpg" alt="">
-                            <div class="card-body bg-white p-4">
-                                <div class="d-flex align-items-center mb-3">
-                                    <a class="btn btn-primary" href="{% url 'single' %}"><i class="fa fa-link"></i></a>
-                                    <h5 class="m-0 ml-3 text-truncate">Diam amet eos at no eos</h5>
-                                </div>
-                                <p>Diam amet eos at no eos sit, amet rebum ipsum clita stet, diam sea est diam eos, sit vero stet justo</p>
-                                <div class="d-flex">
-                                    <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                    <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                    <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card border-0 mb-2">
-                            <img class="card-img-top" src="static/website/img/blog-2.jpg" alt="">
-                            <div class="card-body bg-white p-4">
-                                <div class="d-flex align-items-center mb-3">
-                                    <a class="btn btn-primary" href="{% url 'single' %}"><i class="fa fa-link"></i></a>
-                                    <h5 class="m-0 ml-3 text-truncate">Diam amet eos at no eos</h5>
-                                </div>
-                                <p>Diam amet eos at no eos sit, amet rebum ipsum clita stet, diam sea est diam eos, sit vero stet justo</p>
-                                <div class="d-flex">
-                                    <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                    <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                    <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card border-0 mb-2">
-                            <img class="card-img-top" src="static/website/img/blog-3.jpg" alt="">
-                            <div class="card-body bg-white p-4">
-                                <div class="d-flex align-items-center mb-3">
-                                    <a class="btn btn-primary" href="{% url 'single' %}"><i class="fa fa-link"></i></a>
-                                    <h5 class="m-0 ml-3 text-truncate">Diam amet eos at no eos</h5>
-                                </div>
-                                <p>Diam amet eos at no eos sit, amet rebum ipsum clita stet, diam sea est diam eos, sit vero stet justo</p>
-                                <div class="d-flex">
-                                    <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                    <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                    <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card border-0 mb-2">
-                            <img class="card-img-top" src="static/website/img/blog-1.jpg" alt="">
-                            <div class="card-body bg-white p-4">
-                                <div class="d-flex align-items-center mb-3">
-                                    <a class="btn btn-primary" href="{% url 'single' %}"><i class="fa fa-link"></i></a>
-                                    <h5 class="m-0 ml-3 text-truncate">Diam amet eos at no eos</h5>
-                                </div>
-                                <p>Diam amet eos at no eos sit, amet rebum ipsum clita stet, diam sea est diam eos, sit vero stet justo</p>
-                                <div class="d-flex">
-                                    <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                    <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                    <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 mb-4">
-                        <nav aria-label="Page navigation">
-                        <ul class="pagination justify-content-center mb-0">
-                            <li class="page-item disabled">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                            </li>
-                        </ul>
-                        </nav>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Blog End -->
+        <!-- Contact End -->
 
 
         <!-- Footer Start -->
